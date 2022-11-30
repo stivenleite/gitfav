@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --hue: 140;
+  --bg-input-color: hsla(var(--hue), 65%, 7%, 1);
+  --bg-button-color: hsla(var(--hue), 91%, 25%, 1);
+  --bg-thead-color: hsla(var(--hue), 72%, 13%, 1);
+  --bg-tbody-dark-color: hsla(var(--hue), 61%, 6%, 0.5);
+  --bg-tbody-light-color: hsla(var(--hue), 65%, 7%, 1);
+  --line-primary-color: hsla(var(--hue), 31%, 42%, 1);
+  --font-primary-color: #e1e1e6;
+  --font-secondary-color: #7c7c8a;
+  --font-tertiary-color: #f75a68;
+  --font-gray-color: #4e5455;
+}
+
+/* ----------------------- GLOBAL -------------------------*/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+
+  background: #000;
+}
+
+#app {
+  max-width: 112rem;
+  margin: 11.5rem auto;
+}
+
+/* ----------------------- HEADER -------------------------*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8.7rem;
+}
+
+header .input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+header input {
+  font-size: 1.6rem;
+  color: var(--font-primary-color);
+
+  width: 46.2rem;
+  height: 4.8rem;
+  background: var(--bg-input-color);
+
+  border: none;
+  border-radius: 0.5rem;
+
+  padding-inline: 1.6rem;
+}
+
+header input::placeholder {
+  color: var(--font-gray-color);
+}
+
+header button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: #fff;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  width: 17rem;
+  height: 4.8rem;
+  background: var(--bg-button-color);
+
+  border: none;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+header button:hover {
+  background: #fff;
+  color: var(--bg-button-color);
+}
+
+header button:hover svg path {
+  fill: var(--bg-button-color);
+}
+
+/* ----------------------- TABLE -------------------------*/
+
+main {
+  border: 1px solid var(--line-primary-color);
+  border-radius: 1.2rem;
+
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table * {
+  font-size: 2rem;
+  color: var(--font-primary-color);
+  text-align: left;
+}
+
+table th {
+  background: var(--bg-thead-color);
+  padding: 1.6rem 0 1.6rem 4rem;
+}
+
+table thead tr {
+  display: block;
+}
+
+table tbody {
+  display: block;
+  max-height: 62.4rem;
+  overflow: overlay;
+  width: 100%;
+}
+
+table tbody::-webkit-scrollbar {
+  width: 2.2rem;
+}
+
+table tbody::-webkit-scrollbar-thumb {
+  background: var(--line-primary-color);
+  border: 0.8rem solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 2rem;
+}
+
+table tr:nth-child(odd) {
+  background: var(--bg-tbody-dark-color);
+}
+
+table tr:nth-child(even) {
+  background: var(--bg-tbody-light-color);
+}
+
+table td {
+  padding: 2.4rem 0 2.4rem 4rem;
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+  width: 50.4rem;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+  width: 21.8rem;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+  width: 22rem;
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+  width: 17.8rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+table td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+table td.user a {
+  text-decoration: none;
+}
+
+table td.user a p {
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+}
+
+table button.remove {
+  font-weight: bold;
+  color: var(--font-tertiary-color);
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.empty-message {
+  font-size: 4rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  color: var(--font-gray-color);
+
+  width: 100%;
+  height: 62.4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.empty-message img {
+  width: 13.2rem;
+  height: 12.5rem;
+}
+
+.hide {
+  display: none;
+}
